@@ -1,0 +1,35 @@
+# ============================================================
+#  SBAMS - ngrok Tunnel Configuration (Template)
+#  Exposes all 3 SBAMS services to the internet
+# ============================================================
+# 
+# HOW TO GET YOUR AUTHTOKEN:
+#   1. Go to https://ngrok.com and sign up for FREE
+#   2. Click "Your Authtoken" in the dashboard
+#   3. Copy the token and paste it below
+#
+version: "3"
+agent:
+  authtoken: YOUR_NGROK_AUTHTOKEN_HERE
+
+tunnels:
+  # Student Portal (React Vite dev server)
+  student-portal:
+    proto: http
+    addr: 3002
+    schemes:
+      - https
+
+  # Admin Portal (React Vite dev server)
+  admin-portal:
+    proto: http
+    addr: 3001
+    schemes:
+      - https
+
+  # Backend API (Node.js Express)
+  backend-api:
+    proto: http
+    addr: 5000
+    schemes:
+      - https

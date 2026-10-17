@@ -1,0 +1,54 @@
+name: CI / Build Validation
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # ── Backend Checks ──
+      - name: Install Backend Dependencies
+        working-directory: backend
+        run: npm ci || npm install
+
+      - name: Check Backend Syntax
+        working-directory: backend
+        run: |
+          node -c src/index.js
+          node -c src/db/pool.js
+          node -c src/db/setup.js
+
+      # ── Admin Portal Build Test ──
+      - name: Install Admin Portal Dependencies
+        working-directory: admin-portal
+        run: npm ci || npm install
+
+      - name: Build Admin Portal
+        working-directory: admin-portal
+        env:
+          VITE_API_URL: https://pulseplate-backend.onrender.com
+        run: npm run build
+
+      # ── Student Portal Build Test ──
+      - name: Install Student Portal Dependencies
+        working-directory: student-portal
+        run: npm ci || npm install
+
+      - name: Build Student Portal
+        working-directory: student-portal
+        env:
+          VITE_API_URL: https://pulseplate-backend.onrender.com
+        run: npm run build

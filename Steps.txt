@@ -1,0 +1,20 @@
+=== QUICKEST METHOD ===
+Double-click: START-SBAMS.bat
+To stop all:  STOP-SBAMS.bat
+
+=== MANUAL METHOD ===
+1. Backend:
+   cd c:\SBAMS\backend
+   npm run dev
+
+2. Admin Portal:
+   cd c:\SBAMS\admin-portal
+   npm run dev
+
+3. Student Portal:
+   cd c:\SBAMS\student-portal
+   npm run dev
+
+Admin Portal   → http://localhost:3001
+Student Portal → http://localhost:3002
+Backend API    → http://localhost:5000

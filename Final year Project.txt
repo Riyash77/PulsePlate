@@ -1,0 +1,315 @@
+Final year Project :
+
+Title :PULSE PLATE: Smart Vehicle identification with self-Updating;
+
+=>The device consist of camera and controller . those are main componets and additional componets were added for power supply
+Consider college buses;
+
+buses enter at morning and exit at evening.
+Attendance is noted manually. Admins do not acknowledge the bus is present at clg or not. Students not getting info about bus left the college.Also new students gets problem with bus routes.
+
+Project:
+
+=> Camera detects the number plates and enter the attendance.
+=> Captures driver and verify whether the same driver is driving or not , whether he is sleeping state and checks the seat belt.
+=>Two separate UI for this project.
+=> Single database which stores bus details, bus statistics(which means daily logs of entry and exit attendance), driver details and student details.
+For database lets move for SQL or if needed MongoDB.
+
+UI 1 : web based UI;
+
+it shows 3 sections :AO , Admin and Driver. 
+Access : AO and Admin, [admin mail : 23ec094@kpriet.ac.in, 23ec115@kpriet.ac.in, 23ecl03@kpriet.ac.in. admin password : 23EC094,23EC115,23ECL03]. AO : riyashmoorthy@gmail.com;
+Also access for Drivers (if incase taking the bus for bus services and fuel filling)--> Drivers emails only opens to Access request page. Driver1 example ; name: Driver1, password : Driver1.
+UI contails; 
+=> Bustimings [in and out], In range - good , out of Range - not good. Range [Morning: 8.00 to 8.45]
+=> Access approval for Service (if drivers arise any requests) --> Drivers apply gatepasses and admin approves it.
+ =>Gatepass approval done by only AO.
+=>three separate sections should be appear. based on the details it opens to three pages. Most of the categories are same for AO and Admin.
+=> Ranking of Buses . Based on the bus timings (in range - good timing) they are shorted for ranking.
+=> Bus Details with route informations.
+=>Driver details.
+=> Bus route change access arise by driver and accept by AO.
+
+UI 2 : Both web UI and APP UI 
+
+=>Bus details with routes.
+=>Driver details [ Also info about whether the driver is present or not and driver change info]
+=>Route change informations and notifications.
+=> Based on timing bus left the campus, based on some predictions give info about timing for every stops. both morning and evening.
+=> Based on numberplate detection info and attendance, if bus left the campus during evening transportation , a notification should be sent to the student. The student should select the bus which will be he/she going to travel.
+=>the app shows info of all buses and if it is available in campus it will be green and if not it will be red.
+
+This entire setup is for Coimbatore location.
+
+============================================================================================================================================================================================
+
+
+PULSE PLATE is an AI-powered smart transport management system designed for educational institutions. The system automatically identifies college buses using Automatic Number Plate Recognition (ANPR), maintains digital attendance of bus entry and exit, verifies driver identity, monitors driver safety, and provides live transport information to administrators, drivers, and students.
+
+The solution consists of an edge device installed at the campus gate and two software interfaces (Administrative Portal and Student Portal) connected through a centralized SQL database.
+
+The deployment location is Coimbatore, Tamil Nadu.
+
+2. Hardware System
+
+The edge device consists of:
+
+Raspberry Pi / Edge Controller
+HD Camera
+Power Supply Unit
+Internet Connectivity (Wi-Fi/Ethernet)
+Optional UPS
+
+The device captures every incoming and outgoing bus and transmits the information to the server.
+
+3. AI Features
+Number Plate Recognition
+Detect bus number plate
+Match with registered bus
+Record entry and exit time
+Driver Verification
+Detect driver's face
+Compare with registered driver
+Report mismatch
+Driver Monitoring
+Detect drowsiness
+Detect seat belt usage
+Generate safety alerts
+4. Database
+
+Use PostgreSQL (recommended) or MySQL.
+
+Main tables:
+
+Buses
+Drivers
+Students
+Routes
+Attendance Logs
+Driver Verification Logs
+Number Plate Detection Logs
+Gate Pass Requests
+Route Change Requests
+Notifications
+User Accounts
+
+Images should be stored on disk/cloud with only file paths stored in the database.
+
+UI 1 – Administrative Web Portal
+User Roles
+AO (Administrative Officer)
+
+Full access.
+
+Responsibilities:
+
+Approve Gate Passes
+Approve Route Changes
+View Reports
+Manage Drivers
+Manage Buses
+View Statistics
+Manage Users
+Admin
+
+Can:
+
+View Bus Status
+View Driver Details
+View Statistics
+Approve Service Requests
+View Attendance Logs
+
+Cannot:
+
+Approve Gate Pass
+Approve Route Change
+Driver
+
+Can:
+
+Login
+View Assigned Bus
+Apply for Gate Pass
+Request Route Change
+View Request Status
+Dashboard
+
+Displays:
+
+Total buses
+Buses inside campus
+Buses outside campus
+Drivers available
+Drivers absent
+Today's alerts
+Number of pending approvals
+Bus Timing Panel
+
+Morning Entry
+
+Expected:
+
+08:00 AM – 08:45 AM
+
+Status:
+
+🟢 Good
+
+🔴 Late
+
+Evening Exit
+
+Record exit time automatically.
+
+Bus Ranking
+
+Daily ranking based on punctuality.
+
+Example
+
+Rank	Bus	Score
+1	Bus 12	100
+2	Bus 3	98
+3	Bus 25	95
+Bus Details
+
+Display
+
+Bus Number
+Vehicle Number
+Route
+Capacity
+Current Driver
+Current Status
+Driver Details
+
+Display
+
+Driver Name
+Driver Photo
+License Number
+Phone Number
+Assigned Bus
+Driver Status
+Approval Pages
+Gate Pass Requests
+
+Driver submits request.
+
+AO approves or rejects.
+
+Route Change Request
+
+Driver requests route modification.
+
+AO approves.
+
+UI 2 – Student Portal
+
+Available as:
+
+Responsive Web Application
+Android Application
+Student Login
+
+Student selects
+
+Registered Bus
+Boarding Stop
+Dashboard
+
+Shows
+
+Current bus
+
+Driver
+
+Current Status
+
+Route
+
+Estimated Arrival
+
+Bus Availability
+
+Green
+
+Bus is inside campus
+
+Red
+
+Bus has left campus
+
+Route Information
+
+Display
+
+Complete route
+
+Stops
+
+Distance
+
+Estimated arrival time
+
+Notifications
+
+Automatic notifications:
+
+Bus entered campus
+Bus departed campus
+Driver changed
+Route changed
+Delay notification
+Prediction
+
+When bus exits campus:
+
+Estimate arrival time at every stop using:
+
+Historical travel time
+Current departure time
+Traffic information (future enhancement)
+Driver Information
+
+Display:
+
+Driver Name
+Driver Photo
+Driver Present
+Replacement Driver (if any)
+AI Workflow
+Camera captures bus.
+Number plate is recognized.
+Bus is identified.
+Entry/Exit time is stored.
+Driver face is verified.
+Seat belt detection is performed.
+Drowsiness detection is performed.
+Database is updated.
+Dashboard updates in real time.
+Student notifications are generated.
+Demo Login Accounts
+AO
+
+Email
+
+riyashmoorthy@gmail.com
+Admin
+23ec094@kpriet.ac.in
+23ec115@kpriet.ac.in
+23ecl03@kpriet.ac.in
+
+Passwords
+
+23EC094
+23EC115
+23ECL03
+Driver
+
+Example
+
+Username : Driver1
+Password : Driver1
