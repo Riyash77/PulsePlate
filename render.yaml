@@ -23,5 +23,6 @@ databases:
   # PostgreSQL Database
   - name: pulseplate-db
     databaseName: pulseplate
-    user: postgres
+    user: pulseplate_user
     plan: free
+
