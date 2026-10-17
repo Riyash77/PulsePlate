@@ -75,13 +75,14 @@ app.use(express.urlencoded({ extended: true }));
 // Serve uploaded images
 app.use('/uploads', express.static('uploads'));
 
-// ── Health Check ─────────────────────────────────────────────
-app.get('/health', (req, res) => {
+// ── Health Check & Root ──────────────────────────────────────
+app.get(['/', '/health'], (req, res) => {
   res.json({
-    status: 'ok',
-    service: 'PULSE PLATE API',
+    status: 'online',
+    service: 'PULSE PLATE Backend API',
     version: '1.0.0',
     timestamp: new Date().toISOString(),
+    message: 'Backend API is running and ready for Admin & Student portals!',
   });
 });
 
