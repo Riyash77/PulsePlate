@@ -2,7 +2,7 @@ services:
   # 1. Backend API Web Service
   - type: web
     name: pulseplate-backend
-    env: node
+    runtime: node
     rootDir: backend
     plan: free
     buildCommand: npm install
@@ -20,8 +20,9 @@ services:
         value: 7d
 
   # 2. Admin Portal (React / Vite Static Site)
-  - type: static
+  - type: web
     name: pulseplate-admin
+    runtime: static
     rootDir: admin-portal
     buildCommand: npm install && npm run build
     staticPublishPath: dist
@@ -34,8 +35,9 @@ services:
         value: https://pulseplate-backend.onrender.com
 
   # 3. Student Portal (React / Vite Static Site)
-  - type: static
+  - type: web
     name: pulseplate-student
+    runtime: static
     rootDir: student-portal
     buildCommand: npm install && npm run build
     staticPublishPath: dist
