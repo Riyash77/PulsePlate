@@ -4,45 +4,45 @@
    ============================================================ */
 
 :root {
-  /* Brand Colors */
-  --brand-primary: #6366f1;
-  --brand-secondary: #8b5cf6;
-  --brand-accent: #06b6d4;
+  /* Brand Colors — Teal/Sage palette */
+  --brand-primary: #0a6678;
+  --brand-secondary: #79b8b4;
+  --brand-accent: #b8dba0;
   --brand-success: #10b981;
   --brand-warning: #f59e0b;
   --brand-danger: #ef4444;
   --brand-gold: #fbbf24;
 
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-  --gradient-accent: linear-gradient(135deg, #06b6d4 0%, #6366f1 100%);
+  --gradient-primary: linear-gradient(135deg, #0a6678 0%, #79b8b4 100%);
+  --gradient-accent: linear-gradient(135deg, #b8dba0 0%, #79b8b4 100%);
   --gradient-success: linear-gradient(135deg, #10b981 0%, #059669 100%);
   --gradient-danger: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-  --gradient-dark: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+  --gradient-dark: linear-gradient(135deg, #05151a 0%, #082028 50%, #0a2a32 100%);
 
   /* Background Layers */
-  --bg-base: #080812;
-  --bg-surface: rgba(255, 255, 255, 0.04);
-  --bg-surface-hover: rgba(255, 255, 255, 0.07);
-  --bg-elevated: rgba(255, 255, 255, 0.08);
-  --bg-glass: rgba(16, 16, 40, 0.7);
+  --bg-base: #061419;
+  --bg-surface: rgba(10, 102, 120, 0.06);
+  --bg-surface-hover: rgba(10, 102, 120, 0.10);
+  --bg-elevated: rgba(10, 102, 120, 0.12);
+  --bg-glass: rgba(6, 28, 36, 0.75);
 
   /* Text */
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --text-muted: #475569;
-  --text-accent: #818cf8;
+  --text-primary: #dadadb;
+  --text-secondary: #9bbfbc;
+  --text-muted: #636363;
+  --text-accent: #79b8b4;
 
   /* Borders */
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-medium: rgba(255, 255, 255, 0.12);
-  --border-accent: rgba(99, 102, 241, 0.4);
+  --border-subtle: rgba(121, 184, 180, 0.10);
+  --border-medium: rgba(121, 184, 180, 0.18);
+  --border-accent: rgba(10, 102, 120, 0.45);
 
   /* Shadows */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.2);
+  --shadow-glow: 0 0 40px rgba(10, 102, 120, 0.25);
   --shadow-glow-success: 0 0 20px rgba(16, 185, 129, 0.3);
   --shadow-glow-danger: 0 0 20px rgba(239, 68, 68, 0.3);
 
@@ -78,8 +78,8 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   background-image:
-    radial-gradient(ellipse 80% 60% at 10% 0%, rgba(99, 102, 241, 0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 40% at 90% 100%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+    radial-gradient(ellipse 80% 60% at 10% 0%, rgba(10, 102, 120, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 90% 100%, rgba(121, 184, 180, 0.08) 0%, transparent 50%);
 }
 
 /* ── Scrollbar ────────────────────────────────────────── */
@@ -207,11 +207,11 @@ p { line-height: 1.6; color: var(--text-secondary); }
 .btn-primary {
   background: var(--gradient-primary);
   color: white;
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+  box-shadow: 0 4px 15px rgba(10, 102, 120, 0.4);
 }
 .btn-primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+  box-shadow: 0 6px 20px rgba(10, 102, 120, 0.5);
 }
 
 .btn-success {
@@ -256,7 +256,7 @@ p { line-height: 1.6; color: var(--text-secondary); }
 .badge-danger { background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); }
 .badge-warning { background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); }
 .badge-info { background: rgba(6, 182, 212, 0.15); color: #06b6d4; border: 1px solid rgba(6, 182, 212, 0.3); }
-.badge-primary { background: rgba(99, 102, 241, 0.15); color: #818cf8; border: 1px solid rgba(99, 102, 241, 0.3); }
+.badge-primary { background: rgba(10, 102, 120, 0.15); color: #79b8b4; border: 1px solid rgba(10, 102, 120, 0.3); }
 .badge-gray { background: rgba(100, 116, 139, 0.15); color: #94a3b8; border: 1px solid rgba(100, 116, 139, 0.3); }
 
 /* ── Status Dot ───────────────────────────────────────── */
@@ -328,7 +328,7 @@ p { line-height: 1.6; color: var(--text-secondary); }
 
 .form-input:focus, .form-select:focus, .form-textarea:focus {
   border-color: var(--brand-primary);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+  box-shadow: 0 0 0 3px rgba(10, 102, 120, 0.15);
 }
 
 .form-select option { background: #1a1a2e; }
@@ -348,7 +348,7 @@ p { line-height: 1.6; color: var(--text-secondary); }
 }
 
 .modal-box {
-  background: #141428;
+  background: #071a20;
   border: 1px solid var(--border-medium);
   border-radius: var(--border-radius-xl);
   padding: 32px;
@@ -368,7 +368,7 @@ p { line-height: 1.6; color: var(--text-secondary); }
   position: fixed;
   left: 0;
   top: 0;
-  background: rgba(8, 8, 22, 0.95);
+  background: rgba(6, 20, 25, 0.97);
   border-right: 1px solid var(--border-subtle);
   backdrop-filter: blur(20px);
   display: flex;
@@ -428,7 +428,7 @@ p { line-height: 1.6; color: var(--text-secondary); }
 }
 
 .nav-item:hover { background: var(--bg-surface-hover); color: var(--text-primary); }
-.nav-item.active { background: rgba(99, 102, 241, 0.15); color: #818cf8; border: 1px solid rgba(99, 102, 241, 0.2); }
+.nav-item.active { background: rgba(10, 102, 120, 0.18); color: #79b8b4; border: 1px solid rgba(10, 102, 120, 0.25); }
 .nav-item .nav-icon { width: 18px; height: 18px; flex-shrink: 0; }
 .nav-item .nav-badge { margin-left: auto; background: var(--brand-danger); color: white; font-size: 0.65rem; padding: 2px 6px; border-radius: var(--border-radius-full); font-weight: 700; }
 
@@ -445,7 +445,7 @@ p { line-height: 1.6; color: var(--text-secondary); }
   justify-content: space-between;
   padding: 0 24px;
   border-bottom: 1px solid var(--border-subtle);
-  background: rgba(8, 8, 22, 0.8);
+  background: rgba(6, 20, 25, 0.85);
   backdrop-filter: blur(20px);
   position: sticky;
   top: 0;
@@ -617,6 +617,6 @@ p { line-height: 1.6; color: var(--text-secondary); }
 .bus-inactive { color: #94a3b8; }
 
 /* ── Role Tag ─────────────────────────────────────────── */
-.role-ao { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
-.role-admin { background: linear-gradient(135deg, #06b6d4, #6366f1); }
+.role-ao { background: linear-gradient(135deg, #0a6678, #79b8b4); }
+.role-admin { background: linear-gradient(135deg, #79b8b4, #b8dba0); }
 .role-driver { background: linear-gradient(135deg, #10b981, #059669); }
