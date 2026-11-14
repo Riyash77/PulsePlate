@@ -18,31 +18,31 @@
   --gradient-accent: linear-gradient(135deg, #b8dba0 0%, #79b8b4 100%);
   --gradient-success: linear-gradient(135deg, #10b981 0%, #059669 100%);
   --gradient-danger: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-  --gradient-dark: linear-gradient(135deg, #05151a 0%, #082028 50%, #0a2a32 100%);
+  --gradient-dark: linear-gradient(135deg, #0a6678 0%, #79b8b4 100%);
 
   /* Background Layers */
-  --bg-base: #061419;
-  --bg-surface: rgba(10, 102, 120, 0.06);
-  --bg-surface-hover: rgba(10, 102, 120, 0.10);
-  --bg-elevated: rgba(10, 102, 120, 0.12);
-  --bg-glass: rgba(6, 28, 36, 0.75);
+  --bg-base: #f0f7f8;
+  --bg-surface: rgba(10, 102, 120, 0.05);
+  --bg-surface-hover: rgba(10, 102, 120, 0.09);
+  --bg-elevated: rgba(10, 102, 120, 0.07);
+  --bg-glass: rgba(255, 255, 255, 0.92);
 
   /* Text */
-  --text-primary: #dadadb;
-  --text-secondary: #9bbfbc;
+  --text-primary: #0d2b33;
+  --text-secondary: #2e6b77;
   --text-muted: #636363;
-  --text-accent: #79b8b4;
+  --text-accent: #0a6678;
 
   /* Borders */
-  --border-subtle: rgba(121, 184, 180, 0.10);
-  --border-medium: rgba(121, 184, 180, 0.18);
+  --border-subtle: rgba(10, 102, 120, 0.12);
+  --border-medium: rgba(10, 102, 120, 0.22);
   --border-accent: rgba(10, 102, 120, 0.45);
 
   /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 0 40px rgba(10, 102, 120, 0.25);
+  --shadow-sm: 0 2px 8px rgba(10, 102, 120, 0.08);
+  --shadow-md: 0 8px 24px rgba(10, 102, 120, 0.12);
+  --shadow-lg: 0 16px 48px rgba(10, 102, 120, 0.16);
+  --shadow-glow: 0 0 40px rgba(10, 102, 120, 0.18);
   --shadow-glow-success: 0 0 20px rgba(16, 185, 129, 0.3);
   --shadow-glow-danger: 0 0 20px rgba(239, 68, 68, 0.3);
 
@@ -78,15 +78,15 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   background-image:
-    radial-gradient(ellipse 80% 60% at 10% 0%, rgba(10, 102, 120, 0.15) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 40% at 90% 100%, rgba(121, 184, 180, 0.08) 0%, transparent 50%);
+    radial-gradient(ellipse 80% 60% at 10% 0%, rgba(121, 184, 180, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 90% 100%, rgba(184, 219, 160, 0.10) 0%, transparent 50%);
 }
 
 /* ── Scrollbar ────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+::-webkit-scrollbar-thumb { background: rgba(10, 102, 120, 0.25); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(10, 102, 120, 0.45); }
 
 /* ── Typography ───────────────────────────────────────── */
 h1, h2, h3, h4, h5 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
@@ -331,7 +331,7 @@ p { line-height: 1.6; color: var(--text-secondary); }
   box-shadow: 0 0 0 3px rgba(10, 102, 120, 0.15);
 }
 
-.form-select option { background: #1a1a2e; }
+.form-select option { background: #ffffff; color: #0d2b33; }
 .form-textarea { resize: vertical; min-height: 100px; }
 
 /* ── Modal ────────────────────────────────────────────── */
@@ -348,7 +348,7 @@ p { line-height: 1.6; color: var(--text-secondary); }
 }
 
 .modal-box {
-  background: #071a20;
+  background: #ffffff;
   border: 1px solid var(--border-medium);
   border-radius: var(--border-radius-xl);
   padding: 32px;
@@ -368,7 +368,7 @@ p { line-height: 1.6; color: var(--text-secondary); }
   position: fixed;
   left: 0;
   top: 0;
-  background: rgba(6, 20, 25, 0.97);
+  background: rgba(255, 255, 255, 0.97);
   border-right: 1px solid var(--border-subtle);
   backdrop-filter: blur(20px);
   display: flex;
@@ -445,7 +445,7 @@ p { line-height: 1.6; color: var(--text-secondary); }
   justify-content: space-between;
   padding: 0 24px;
   border-bottom: 1px solid var(--border-subtle);
-  background: rgba(6, 20, 25, 0.85);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(20px);
   position: sticky;
   top: 0;
